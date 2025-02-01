@@ -1,0 +1,965 @@
+:root {
+    /* Light Mode Colors */
+    --background-color: #f7f7f7;
+    --card-background: #ffffff;
+    --navbar-background: #e2e2e2;
+    --primary-color: #333333;
+    --accent-color: #3498db;
+    --highlight-color: #f39c12;
+    --text-color: #2c3e50;
+    --text-light: #ffffff;
+    --text-muted: #95a5a6;
+
+    /* Dark Mode Colors */
+    --dark-background-color: #2c3e50;
+    --dark-card-background: #34495e;
+    --dark-navbar-background: #7f8c8d;
+    --dark-primary-color: #ecf0f1;
+    --dark-accent-color: #3498db;
+    --dark-highlight-color: #f39c12;
+    --dark-text-color: #ecf0f1;
+    --dark-text-light: #ffffff;
+    --dark-text-muted: #95a5a6;
+
+    /* genarel colors  */
+    --color-red:rgb(219, 43, 43);
+    --color-red-hover:rgb(173, 28, 28);
+    --color-blue:#2970da;
+    --color-blue-hover:#1f58ad;
+    --color-green:#1d9e53;
+    --color-green-hover:#0d7237;
+    --color-yellow:#f39c12;
+    --color-yellow-hover:#c78110;
+}
+
+
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+
+/* Light Mode */
+body.light-mode {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.light-mode .sidebar, .light-mode .sidebar a {
+    background-color: var(--navbar-background);
+    color: var(--text-color);
+}
+
+.light-mode .header, .light-mode .card, .light-mode .exchange-rate-banner {
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
+}
+
+.dark-mode .sidebar {
+    background-color: var(--dark-navbar-background);
+    color: var(--dark-text-light);
+}
+
+.dark-mode .header, .dark-mode .header h1, .dark-mode .card, .dark-mode .exchange-rate-banner, .dark-mode .section-container h2, .dark-mode .section-container, .dark-mode .section-container p,  .dark-mode .section-container .checkbox-label, .dark-mode .filter-form{
+    background-color: var(--dark-card-background);
+    color: var(--dark-text-color);
+    border: var(--primary-color);
+}
+
+.dark-mode .section-container input, .dark-mode .section-container select, .dark-mode .section-container input::placeholder, .dark-mode .filter-form input, .dark-mode .filter-form select, .dark-mode .filter-form input::placeholder, .dark-mode .filter-form #filter-input, .dark-mode .filter-form #filter-option,.dark-mode .popup-container .center-flex-div .popup-content {
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
+    border: var(--primary-color);
+}
+
+.dark-mode .dark-mode-toggle {
+    background-color: var(--dark-accent-color);
+}
+
+.dark-mode .data-tables th {
+    background-color: var(--dark-card-background);
+}
+
+
+
+.transac-status{
+    color: var(--text-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main Content Wrapper */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+    width: calc(100% - 220px);
+    transition: margin-left 0.3s ease;
+}
+
+/* Header */
+/* .header {
+    background-color: var(--card-background);
+    padding: 15px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.dark-mode-toggle {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: var(--highlight-color);
+} */
+
+/* Exchange Rate Banner */
+.exchange-rate-banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--text-light);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.exchange-rate-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.exchange-icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    color: var(--highlight-color);
+}
+
+.exchange-icon {
+    font-size: 4rem;
+    margin-right: 10px;
+    color: var(--highlight-color);
+}
+
+.rate {
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--highlight-color);
+    margin-left: 5px;
+}
+
+/* Dashboard Section */
+.dashboard {
+    padding: 20px;
+}
+
+/* Summary Cards */
+.summary-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.summary-cards a{
+    width: 100%;
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Action Buttons */
+.actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+}
+
+.action-button {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 25px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Transaction History */
+.data-tables {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.data-tables table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    min-width: 800px;
+}
+
+
+
+.data-tables th, .data-tables td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.tb-action{
+    width: 30%;
+}
+
+.tb-tr-id{
+    width: 15%;
+}
+
+.data-tables th {
+    background-color: var(--card-background);
+}
+.data-tables tbody tr{
+    transition: background-color 0.3s ease;
+}
+.data-tables tbody tr:hover {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+}
+
+.data-tables td div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.red-bg{
+    width: 5rem;
+    border-radius: 5px;
+    background-color:var(--color-red);
+}
+
+.green-bg{
+    width: 5rem;
+    border-radius: 5px;
+    background-color:var(--color-green);
+}
+
+.yellow-bg{
+    width: 5rem;
+    border-radius: 5px;
+    background-color:var(--color-yellow);
+}
+
+.gray-bg{
+    width: 5rem;
+    border-radius: 5px;
+    background-color:rgb(123, 182, 209);
+}
+
+
+/* .delete-history {
+    background-color: #e74c3c;
+    color: var(--text-light);
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-history:hover {
+    background-color: #c0392b;
+}
+
+.delete-history:focus {
+    outline: none;
+} */
+
+
+/* small red button */
+
+.btn-small-red {
+    background-color: var(--color-red);
+    color: var(--text-light);
+    padding: 5px 15px;
+    border: none;
+    /* border-radius: 0 5px 5px 0 ; */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-small-red:hover {
+    background-color: var(--color-red-hover);
+}
+
+.btn-small-red:focus {
+    outline: none;
+}
+
+
+/* small green button */
+
+.btn-small-green {
+    background-color: var(--color-green);
+    color: var(--text-light);
+    padding: 5px 15px;
+    border: none;
+    /* border-radius: 0 5px 5px 0 ; */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-small-green:hover {
+    background-color: var(--color-green-hover);
+}
+
+.btn-small-green:focus {
+    outline: none;
+}
+
+
+/* small blue button */
+
+.btn-small-blue {
+    background-color: var(--color-blue);
+    color: var(--text-light);
+    padding: 5px 15px;
+    border: none;
+    /* border-radius: 0 5px 5px 0 ; */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-small-blue:hover {
+    background-color: var(--color-blue-hover);
+}
+
+.btn-small-blue:focus {
+    outline: none;
+}
+
+
+
+.btn-small-yellow {
+    background-color: var(--color-yellow);
+    color: var(--text-light);
+    padding: 5px 15px;
+    border: none;
+    /* border-radius: 0 5px 5px 0 ; */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-small-yellow:hover {
+    background-color: var(--color-yellow-hover);
+}
+
+.btn-small-yellow:focus {
+    outline: none;
+}
+
+
+.btn-container button{
+    height: 2rem;
+    font-size: 1rem;
+}
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Container for the View Page */
+.transaction-view {
+    max-width: 800px;
+    margin: 30px auto; /* Center the view page */
+    padding: 20px;
+    background-color: #ffffff; /* White background for the transaction details */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Heading for the View Page */
+.transaction-view h2 {
+    text-align: center;
+    color: #333; /* Dark text color */
+    margin-bottom: 20px;
+}
+
+/* Transaction Details Styling */
+.transaction-info p {
+    font-size: 16px; /* Font size for transaction details */
+    color: #333; /* Dark text color */
+    margin: 10px 0; /* Spacing between each detail */
+    display: flex;
+    padding: 0.5rem;
+}
+
+/* Back Button Styling */
+.back-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+    margin-top: 20px;
+}
+
+/* Hover effect for the Back Button */
+.back-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+
+
+
+
+
+/* column flex div */
+
+.col-flex-div{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.row-flex-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+/* Overall form styling */
+.filter-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Input field styling */
+
+#filter-input {
+    padding: 8px 30px 8px 10px;  /* Adjust padding for space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 14px;
+}
+
+#filter-input:focus{
+    outline: none;
+}
+
+/* Select styling */
+#filter-option {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Button styling */
+.filter-form .btn-small-yellow {
+    padding: 8px 15px;
+    background-color: var(--color-yellow);
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-form .btn-small-yellow:hover {
+    background-color: var(--color-yellow-hover);
+}
+
+
+
+
+/* Base Styles */
+#filter-input { display: block; }
+.date-inputs { display: none; }
+
+/* Show date inputs when 'by Date' is selected */
+form:has(select#filter-option[value="date"]:checked) #filter-input {
+    display: none;
+}
+form:has(select#filter-option[value="date"]:checked) .date-inputs {
+    display: flex;
+    gap: 10px; /* Space between date fields */
+}
+
+/* Styled Date Inputs */
+.styled-date-input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+.styled-date-input:focus {
+    outline: none;
+    border-color: #5c9cf2;
+    box-shadow: 0 0 8px rgba(92, 156, 242, 0.3);
+}
+
+/* Responsive Adjustment */
+.date-inputs {
+    flex-direction: column;
+}
+
+/* For larger screens, show date inputs side-by-side */
+@media (min-width: 600px) {
+    .date-inputs {
+        flex-direction: row;
+    }
+}
+
+
+
+
+
+
+/* Login Container */
+.section-container {
+    max-width: 350px;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+
+.section-container h2 {
+    color: var(--text-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Input Group Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group input, .input-group select, .input-group select option{
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    outline: none;
+    background-color: var(--card-background);
+}
+
+.input-group input:focus {
+    border-color: var(--accent-color);
+}
+
+
+
+
+
+
+/* Toggle Password Button */
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
+/* Login Button Styling */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Signup Link Styling */
+.signup-link {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 15px;
+}
+
+.signup-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+.payment-method {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 20px;
+}
+
+.payment-method b {
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #007BFF;
+    border: 10px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+    background-color: #007BFF;
+}
+
+.checkbox-label input[type="checkbox"]:hover {
+    border: 10px solid #007BFF;
+}
+
+.lable-input{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.lable-input input{
+    width: 10rem;
+    text-align: center;
+    padding: 12px ;
+    font-size: 16px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    outline: none;
+    background-color: var(--card-background);
+
+}
+
+
+
+
+
+/* Popup style */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.center-flex-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.popup-content {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+}
+
+.close {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+/* Prevent scrolling */
+.no-scroll {
+    overflow: hidden;
+}
+
+.dark-mode .popup-container .center-flex-div .popup-content {
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
+    border: var(--primary-color);
+
+}
+
+
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .summary-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: none; /* Hide sidebar on smaller screens */
+    }
+
+    .header {
+        display: block;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .dark-mode-toggle {
+        margin-top: 10px;
+    }
+
+    .exchange-rate-banner {
+        padding: 10px 0;
+        font-size: 1em;
+    }
+
+    .summary-cards {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-button {
+        width: 100%;
+    }
+
+    .data-tables {
+        margin-top: 20px;
+    }
+
+    .delete-history {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .dark-mode-toggle {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .exchange-rate-content {
+        flex-direction: column;
+    }
+
+    .exchange-icon {
+        margin-bottom: 10px;
+    }
+
+    .rate {
+        font-size: 1em;
+    }
+}
+
+
+
+
+
